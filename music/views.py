@@ -10,8 +10,8 @@ def index(request):
     all_album = Album.objects.all()
     html = ''
     for album in all_album:
-        path = '/music/' + str(album.id) + '/'
-        html += '<a href="' + path + '">title</a><br>'
+        url = '/music/' + str(album.id) + '/'
+        html += '<a href="' + url + '">' + album.album_title + '</a><br>'
     return HttpResponse("<h1>This is the music app homepage</h1>")
 
 
